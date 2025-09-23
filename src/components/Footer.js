@@ -13,7 +13,9 @@ const Footer = () => {
           
           <div className="flex space-x-6 animate-slide-up">
             <a 
-              href="#" 
+              href="https://github.com/DiegoHenriqueMelo" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 relative group"
               aria-label="GitHub"
             >
@@ -21,7 +23,9 @@ const Footer = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/devmelo/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 relative group"
               aria-label="LinkedIn"
             >
@@ -29,7 +33,7 @@ const Footer = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
             </a>
             <a 
-              href="#" 
+              href="mailto:diegomelo.suporte@gmail.com" 
               className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 relative group"
               aria-label="Email"
             >
