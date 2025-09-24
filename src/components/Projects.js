@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+  const navigate = useNavigate();
+  
   const projects = [
     {
       title: "ReduzAI",
@@ -10,11 +13,13 @@ const Projects = () => {
       github: "https://github.com/DiegoHenriqueMelo/ReduzAi_back-end",
     },
     {
-      title: "PCDentro",
-      description: "PWO voltado para PCD's, sistema intuitivo e acessivel para todos os usuários.",
-      tech: ["React", "Node.js", "PostgresSQL", "Tailwind", "Jest.js"],
+      title: "APL PCD API",
+      description: "Sistema Enterprise de Gestão de Inclusão Profissional para PCD's com Node.js + TypeScript + PostgreSQL.",
+      tech: ["Node.js", "TypeScript", "PostgreSQL", "Jest", "JWT", "..."],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
       github: "https://github.com/caua-mendonca/APL_PCD_API",
+      hasDetailPage: true,
+      detailPath: "/projeto/apl-pcd-api"
     },
     {
       title: "Hackathon 2025",
@@ -70,12 +75,32 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-3">
-                  <a 
-                    href={project.github}
-                    className="flex-1 text-center py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 hover:border-gray-400 hover:scale-105 transition-all duration-300"
-                  >
-                    GitHub
-                  </a>
+                  {project.hasDetailPage ? (
+                    <>
+                      <button 
+                        onClick={() => {
+                          navigate(project.detailPath);
+                          window.scrollTo(0, 0);
+                        }}
+                        className="flex-1 text-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+                      >
+                        Ver Detalhes
+                      </button>
+                      <a 
+                        href={project.github}
+                        className="flex-1 text-center py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 hover:border-gray-400 hover:scale-105 transition-all duration-300"
+                      >
+                        GitHub
+                      </a>
+                    </>
+                  ) : (
+                    <a 
+                      href={project.github}
+                      className="flex-1 text-center py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 hover:border-gray-400 hover:scale-105 transition-all duration-300"
+                    >
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
