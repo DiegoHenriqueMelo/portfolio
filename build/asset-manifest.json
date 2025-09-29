@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.dde7abbe.css",
-    "main.js": "/portfolio/static/js/main.9d34a96c.js",
-    "static/media/img_hackathon.jpg": "/portfolio/static/media/img_hackathon.4c766292198eb2a0fa33.jpg",
+    "main.js": "/portfolio/static/js/main.d5f3a36e.js",
     "index.html": "/portfolio/index.html",
     "main.dde7abbe.css.map": "/portfolio/static/css/main.dde7abbe.css.map",
-    "main.9d34a96c.js.map": "/portfolio/static/js/main.9d34a96c.js.map"
+    "main.d5f3a36e.js.map": "/portfolio/static/js/main.d5f3a36e.js.map"
   },
   "entrypoints": [
     "static/css/main.dde7abbe.css",
-    "static/js/main.9d34a96c.js"
+    "static/js/main.d5f3a36e.js"
   ]
 }

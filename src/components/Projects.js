@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import imgHackathon from './img_hackathon.jpg';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ const Projects = () => {
       title: "Hackathon 2025",
       description: "Sistema inovador com IA desenvolvido para o Hackathon 2025. Solução completa com interface moderna e backend robusto.",
       tech: ["React.js", "PostgresSQL", "Tailwind", "Express.js", "Jest.ts"],
-      image: imgHackathon,
+      image: "/portfolio/img/img_hackathon.jpg",
       github: "https://github.com/DiegoHenriqueMelo/hackathon-2025",
       hasDetailPage: true,
       detailPath: "/projeto/hackathon-2025",
