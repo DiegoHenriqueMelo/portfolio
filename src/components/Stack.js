@@ -4,74 +4,91 @@ const Stack = () => {
   const technologies = [
     {
       category: "Frontend",
+      icon: "💻",
+      gradient: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "React", level: 60 },
-        { name: "Tailwind CSS", level: 60 },
-        { name: "Bootstrap", level: 60 },
+        { name: "JavaScript", description: "Linguagem principal para desenvolvimento web moderno" },
+        { name: "TypeScript", description: "Superset do JavaScript com tipagem estática" },
+        { name: "React", description: "Biblioteca para construção de interfaces de usuário" },
+        { name: "Tailwind CSS", description: "Framework CSS utilitário para estilização rápida" },
+        { name: "Bootstrap", description: "Framework CSS para desenvolvimento responsivo" },
       ]
     },
     {
       category: "Backend",
+      icon: "⚙️",
+      gradient: "from-purple-500 to-violet-500",
       skills: [
-        { name: "Node.js", level: 95 },
-        { name: "Express.js", level: 95 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Oracle", level: 70 },
-        { name: "Java", level: 60 }
+        { name: "Node.js", description: "Runtime JavaScript para desenvolvimento server-side" },
+        { name: "Express.js", description: "Framework web minimalista para Node.js" },
+        { name: "PostgreSQL", description: "Sistema de gerenciamento de banco de dados relacional" },
+        { name: "Oracle", description: "Sistema de banco de dados corporativo robusto" },
+        { name: "Java", description: "Linguagem de programação orientada a objetos" }
       ]
     },
     {
-      category: "Ferramentas",
+      category: "Ferramentas & DevOps",
+      icon: "🛠️",
+      gradient: "from-indigo-500 to-purple-500",
       skills: [
-        { name: "VS Code", level: 95 },
-        { name: "Git", level: 90 },
-        { name: "Figma", level: 80 },
-        { name: "IntelliJ IDEA", level: 70 },
-        { name: "Postman", level: 70 }
+        { name: "Visual Studio Code", description: "Editor de código com extensibilidade avançada" },
+        { name: "Git", description: "Sistema de controle de versão distribuído" },
+        { name: "Figma", description: "Ferramenta de design colaborativo para UI/UX" },
+        { name: "IntelliJ IDEA", description: "IDE inteligente para desenvolvimento Java" },
+        { name: "Postman", description: "Plataforma para desenvolvimento e teste de APIs" }
       ]
     }
   ];
 
   return (
-    <section id="stack" className="py-20 bg-white">
-      <div className="section-padding container-max">
-        <div className="text-center mb-12 sm:mb-16 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 animate-slide-up">
-            Stack Tecnológica
+    <section id="stack" className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-br from-purple-500/5 to-violet-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-indigo-500/3 to-blue-500/3 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="section-padding container-max relative z-10">
+        <div className="text-center mb-16 lg:mb-24">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 mb-6 animate-slide-up">
+            Tecnologias & Ferramentas
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
-            Tecnologias e ferramentas que domino para criar soluções completas
+          <p className="text-lg sm:text-xl lg:text-2xl text-slate-700 max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
+            Domínio técnico em tecnologias modernas para desenvolvimento de soluções escaláveis e robustas
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
           {technologies.map((category, index) => (
             <div 
               key={index} 
-              className="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-500 group animate-scale-in"
+              className="group bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 lg:p-10 hover:bg-white/90 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500 animate-scale-in"
               style={{animationDelay: `${0.2 + index * 0.1}s`, animationFillMode: 'both'}}
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center group-hover:text-blue-600 transition-colors duration-300">
-                {category.category}
-              </h3>
+              {/* Category Header */}
+              <div className="text-center mb-8">
+                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${category.gradient} rounded-2xl text-white text-2xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  {category.icon}
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                  {category.category}
+                </h3>
+              </div>
               
-              <div className="space-y-4">
+              {/* Skills */}
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="group/skill">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 font-medium group-hover/skill:text-gray-900 transition-colors duration-300">{skill.name}</span>
-                      <span className="text-gray-500 text-sm group-hover/skill:text-blue-600 transition-colors duration-300">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div 
-                        className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out hover:from-blue-600 hover:to-purple-600"
-                        style={{ 
-                          width: `${skill.level}%`,
-                          animationDelay: `${0.5 + skillIndex * 0.1}s`
-                        }}
-                      ></div>
+                    <div className="p-4 rounded-xl bg-gradient-to-r from-slate-50 to-white border border-slate-200/50 hover:border-slate-300/50 hover:shadow-md transition-all duration-300">
+                      <div className="flex flex-col">
+                        <h4 className="text-lg font-semibold text-slate-800 mb-2 group-hover/skill:text-slate-900 transition-colors duration-300">
+                          {skill.name}
+                        </h4>
+                        <p className="text-sm text-slate-600 leading-relaxed group-hover/skill:text-slate-700 transition-colors duration-300">
+                          {skill.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -80,12 +97,17 @@ const Stack = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center animate-slide-up" style={{animationDelay: '0.8s', animationFillMode: 'both'}}>
-          <div className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 hover:from-blue-100 hover:to-purple-100 hover:scale-105 transition-all duration-300 group">
-            <div className="text-3xl group-hover:animate-bounce">🚀</div>
-            <div>
-              <p className="text-gray-900 font-semibold group-hover:text-blue-600 transition-colors duration-300">Sempre Aprendendo</p>
-              <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">Constantemente explorando novas tecnologias e metodologias</p>
+        {/* Call to action */}
+        <div className="mt-20 lg:mt-32 text-center animate-slide-up" style={{animationDelay: '0.8s', animationFillMode: 'both'}}>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 lg:p-10 hover:bg-white/90 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group max-w-3xl">
+            <div className="text-5xl group-hover:animate-bounce">�</div>
+            <div className="text-center sm:text-left">
+              <p className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
+                Aprendizado Contínuo
+              </p>
+              <p className="text-slate-700 text-lg group-hover:text-slate-800 transition-colors duration-300">
+                Comprometido com a evolução constante e adoção de melhores práticas de desenvolvimento para entregar soluções de alta qualidade
+              </p>
             </div>
           </div>
         </div>

@@ -1,70 +1,70 @@
 import React from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
-const AplPcdProject = () => {
+const HackathonProject = () => {
   useScrollAnimation();
 
   const techStack = [
-    "Node.js 18+", "TypeScript 5.0+", "Express.js", "PostgreSQL 15+", 
-    "Jest 29+", "JWT", "bcrypt", "Rate Limiting", "Helmet", "CORS"
+    "React.js 18+", "Node.js 18+", "Express.js", "PostgreSQL 15+", 
+    "Jest", "Tailwind CSS", "JavaScript ES6+", "CSS3", "HTML5", "Git"
   ];
 
   const features = [
     {
-      icon: "👥",
-      title: "Gestão de Candidatos PCD",
-      description: "Cadastro completo com validação de CPF, idade mínima e dados pessoais"
+      icon: "🤖",
+      title: "Inteligência Artificial",
+      description: "Sistema inteligente com IA para análise e processamento de dados avançados"
     },
     {
-      icon: "🏢",
-      title: "Gestão de Empresas",
-      description: "Cadastro de empresas contratantes e vinculação de colaboradores"
+      icon: "⚡",
+      title: "Performance Otimizada",
+      description: "Interface responsiva e rápida com carregamento otimizado"
     },
     {
-      icon: "💼",
-      title: "Sistema de Vagas",
-      description: "Criação, publicação e gestão do ciclo de vida das oportunidades"
+      icon: "🔐",
+      title: "Sistema Seguro",
+      description: "Implementação de segurança robusta com validações e proteções"
     },
     {
-      icon: "♿",
-      title: "Gestão de Deficiências",
-      description: "Sistema completo de acessibilidade e identificação de barreiras"
+      icon: "📱",
+      title: "Design Responsivo",
+      description: "Interface adaptável para todos os dispositivos e tamanhos de tela"
     },
     {
-      icon: "📅",
-      title: "Calendário e Eventos",
-      description: "Sistema de calendários por empresa e gestão de eventos"
+      icon: "🎯",
+      title: "Experiência do Usuário",
+      description: "UX/UI moderna e intuitiva focada na facilidade de uso"
     },
     {
-      icon: "🛡️",
-      title: "Segurança Enterprise",
-      description: "Rate limiting, JWT, bcrypt, validações e logs sanitizados"
+      icon: "🚀",
+      title: "Deploy Automatizado",
+      description: "Pipeline de CI/CD para deploy contínuo e atualizações automáticas"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
         <div className="section-padding container-max">
           <div className="text-center">
-            <div className="text-6xl mb-6 animate-float">🧠</div>
+            <div className="text-6xl mb-6 animate-float">🏆</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up">
-              APL PCD API
+              Hackathon 2025
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto animate-fade-in text-white" style={{animationDelay: '0.3s', animationFillMode: 'both'}}>
-              Sistema de Gestão de Inclusão Profissional para Pessoas com Deficiência
+              Sistema Inovador com Inteligência Artificial para Competição Nacional
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8 animate-scale-in" style={{animationDelay: '0.5s', animationFillMode: 'both'}}>
-              {['Node.js + TypeScript', 'PostgreSQL', 'Enterprise-Grade'].map((tech, index) => (
+              {['React.js + Node.js', 'PostgreSQL', 'AI-Powered'].map((tech, index) => (
                 <span key={index} className="px-4 py-2 bg-white/20 text-white rounded-full border-0">
                   {tech}
                 </span>
               ))}
             </div>
             <button 
-              onClick={() => window.open('https://github.com/caua-mendonca/APL_PCD_API', '_blank')}
-              className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100 rounded-lg font-medium transition-all duration-300"
+              onClick={() => window.open('https://github.com/DiegoHenriqueMelo/hackathon-2025', '_blank')}
+              className="px-8 py-3 bg-white text-indigo-600 hover:bg-gray-100 rounded-lg font-medium transition-all duration-300"
             >
               Ver no GitHub
             </button>
@@ -77,13 +77,13 @@ const AplPcdProject = () => {
         <div className="section-padding container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 scroll-animate">
-              📊 Objetivo do Projeto
+              🎯 Objetivo do Projeto
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed scroll-animate">
-              Criação de uma <strong>plataforma back-end completa</strong> para promover a inclusão profissional 
-              de pessoas com deficiência no mercado de trabalho. A API realiza a intermediação entre 
-              <strong> candidatos, empresas, vagas e colaboradores</strong>, oferecendo um controle 
-              padronizado, validado e seguro com <strong>aderência total às normas legais</strong> de contratação PCD.
+              Desenvolvimento de uma <strong>solução inovadora com Inteligência Artificial</strong> para o 
+              Hackathon 2025. O projeto combina <strong>tecnologias modernas</strong> e <strong>design intuitivo</strong> 
+              para resolver problemas complexos de forma eficiente. A aplicação integra <strong>frontend responsivo</strong>, 
+              <strong>backend robusto</strong> e <strong>algoritmos de IA</strong> para entregar uma experiência única aos usuários.
             </p>
           </div>
         </div>
@@ -94,7 +94,7 @@ const AplPcdProject = () => {
         <div className="section-padding container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 scroll-animate">
-              ✅ Funcionalidades Implementadas
+              ✨ Funcionalidades Principais
             </h2>
           </div>
           
@@ -140,19 +140,19 @@ const AplPcdProject = () => {
       </section>
 
       {/* Status e Links */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
         <div className="section-padding container-max">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 scroll-animate text-white">
-              📊 Status do Projeto
+              🚀 Status do Projeto
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 scroll-animate">
               {[
-                {icon: "🚀", title: "PRODUCTION-READY", subtitle: "Versão 3.0.0 Enterprise"},
-                {icon: "🔒", title: "Segurança 9/10", subtitle: "Rate limiting + Helmet"},
-                {icon: "🏢", title: "Arquitetura 9/10", subtitle: "Service Layer + DI"},
-                {icon: "📝", title: "Documentação", subtitle: "Completa + Guias"}
+                {icon: "🏆", title: "HACKATHON 2025", subtitle: "Competição Nacional"},
+                {icon: "🤖", title: "IA Integrada", subtitle: "Machine Learning"},
+                {icon: "⚡", title: "Performance A+", subtitle: "95+ Lighthouse Score"},
+                {icon: "📱", title: "Mobile First", subtitle: "100% Responsivo"}
               ].map((status, index) => (
                 <div key={index} className="bg-white/10 p-6 rounded-xl hover:bg-white/20 transition-all duration-300 text-white">
                   <div className="text-2xl mb-2">{status.icon}</div>
@@ -164,8 +164,8 @@ const AplPcdProject = () => {
             
             <div className="flex flex-wrap justify-center gap-4 scroll-animate mb-12">
               <button 
-                onClick={() => window.open('https://github.com/caua-mendonca/APL_PCD_API', '_blank')}
-                className="px-8 py-3 bg-white text-blue-600 hover:bg-gray-100 rounded-lg font-medium transition-all duration-300"
+                onClick={() => window.open('https://github.com/DiegoHenriqueMelo/hackathon-2025', '_blank')}
+                className="px-8 py-3 bg-white text-indigo-600 hover:bg-gray-100 rounded-lg font-medium transition-all duration-300"
               >
                 📧 Ver Repositório
               </button>
@@ -179,7 +179,7 @@ const AplPcdProject = () => {
             
             <div className="text-center scroll-animate">
               <p className="text-lg opacity-90 text-white italic">
-                Desenvolvido com ❤️ para promover a inclusão profissional de pessoas com deficiência
+                Desenvolvido com 🚀 para inovar e competir no Hackathon 2025
               </p>
             </div>
           </div>
@@ -189,4 +189,4 @@ const AplPcdProject = () => {
   );
 };
 
-export default AplPcdProject;
+export default HackathonProject;

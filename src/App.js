@@ -8,6 +8,7 @@ import Stack from './components/Stack';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AplPcdProject from './components/AplPcdProject';
+import HackathonProject from './components/HackathonProject';
 
 // Página principal do portfólio
 const HomePage = () => (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projeto/apl-pcd-api" element={<AplPcdProject />} />
+          <Route path="/projeto/hackathon-2025" element={<HackathonProject />} />
         </Routes>
         <Footer />
       </div>
