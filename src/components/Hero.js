@@ -18,12 +18,6 @@ const Hero = () => {
       <div className="section-padding container-max text-center relative z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="animate-fade-in">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-sm animate-slide-up">
-                ✨ Desenvolvedor Full Stack
-              </span>
-            </div>
-            
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight">
               <span className="block text-white/90 animate-slide-up" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
                 Olá, eu sou
@@ -51,22 +45,6 @@ const Hero = () => {
             >
               💬 Entre em Contato
             </button>
-          </div>
-
-          {/* Stats cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: '1s', animationFillMode: 'both'}}>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">3+</div>
-              <div className="text-blue-100/70 text-sm sm:text-base">Projetos</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-2">11+</div>
-              <div className="text-blue-100/70 text-sm sm:text-base">Tecnologias</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-violet-400 mb-2">1+</div>
-              <div className="text-blue-100/70 text-sm sm:text-base">Anos de Experiência</div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import imgHackathon from './img_hackathon.jpg';
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Projects = () => {
       github: "https://github.com/caua-mendonca/APL_PCD_API",
       hasDetailPage: true,
       detailPath: "/projeto/apl-pcd-api",
-      status: "Concluído",
+      status: "Em Desenvolvimento",
       icon: "♿",
       gradient: "from-purple-500 to-violet-500"
     },
@@ -31,11 +32,11 @@ const Projects = () => {
       title: "Hackathon 2025",
       description: "Sistema inovador com IA desenvolvido para o Hackathon 2025. Solução completa com interface moderna e backend robusto.",
       tech: ["React.js", "PostgresSQL", "Tailwind", "Express.js", "Jest.ts"],
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
+      image: imgHackathon,
       github: "https://github.com/DiegoHenriqueMelo/hackathon-2025",
       hasDetailPage: true,
       detailPath: "/projeto/hackathon-2025",
-      status: "Em Desenvolvimento",
+      status: "Finalizado ",
       icon: "🏆",
       gradient: "from-indigo-500 to-purple-500"
     }
@@ -72,14 +73,19 @@ const Projects = () => {
             >
               {/* Project Header */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl sm:text-7xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                <div className="absolute top-4 left-4">
+                  <div className="text-3xl sm:text-4xl bg-white/20 backdrop-blur-sm rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center border border-white/30">
                     {project.icon}
                   </div>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs font-semibold rounded-full`}>
+                  <span className={`px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs font-semibold rounded-full backdrop-blur-sm`}>
                     {project.status}
                   </span>
                 </div>

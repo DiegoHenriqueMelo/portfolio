@@ -41,75 +41,69 @@ const Stack = () => {
   ];
 
   return (
-    <section id="stack" className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-br from-purple-500/5 to-violet-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-indigo-500/3 to-blue-500/3 rounded-full blur-3xl"></div>
+    <section id="stack" className="py-20 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25px 25px, #3b82f6 2px, transparent 0), 
+                           radial-gradient(circle at 75px 75px, #8b5cf6 2px, transparent 0)`,
+          backgroundSize: '100px 100px'
+        }}></div>
       </div>
       
       <div className="section-padding container-max relative z-10">
-        <div className="text-center mb-16 lg:mb-24">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 mb-6 animate-slide-up">
-            Tecnologias & Ferramentas
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 rounded-full text-sm font-semibold tracking-wider uppercase">
+              Stack Tecnológico
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-slide-up">
+            Tecnologias & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Ferramentas</span>
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-slate-700 max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
-            Domínio técnico em tecnologias modernas para desenvolvimento de soluções escaláveis e robustas
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s', animationFillMode: 'both'}}>
+            Arsenal completo para desenvolvimento de soluções modernas e escaláveis
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {technologies.map((category, index) => (
             <div 
               key={index} 
-              className="group bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 lg:p-10 hover:bg-white/90 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500 animate-scale-in"
-              style={{animationDelay: `${0.2 + index * 0.1}s`, animationFillMode: 'both'}}
+              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gray-200 hover:-translate-y-3 animate-scale-in"
+              style={{animationDelay: `${0.3 + index * 0.1}s`, animationFillMode: 'both'}}
             >
-              {/* Category Header */}
-              <div className="text-center mb-8">
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${category.gradient} rounded-2xl text-white text-2xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+              {/* Gradient Background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`}></div>
+              
+              {/* Header */}
+              <div className="relative text-center mb-8">
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl text-white text-2xl mb-4 bg-gradient-to-r ${category.gradient} shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-500`}>
                   {category.icon}
                 </div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600 group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                   {category.category}
                 </h3>
               </div>
               
-              {/* Skills */}
-              <div className="space-y-6">
+              {/* Skills List */}
+              <div className="relative space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group/skill">
-                    <div className="p-4 rounded-xl bg-gradient-to-r from-slate-50 to-white border border-slate-200/50 hover:border-slate-300/50 hover:shadow-md transition-all duration-300">
-                      <div className="flex flex-col">
-                        <h4 className="text-lg font-semibold text-slate-800 mb-2 group-hover/skill:text-slate-900 transition-colors duration-300">
-                          {skill.name}
-                        </h4>
-                        <p className="text-sm text-slate-600 leading-relaxed group-hover/skill:text-slate-700 transition-colors duration-300">
-                          {skill.description}
-                        </p>
-                      </div>
-                    </div>
+                  <div key={skillIndex} className="group/skill bg-gray-50 rounded-xl p-4 hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-200">
+                    <h4 className="font-semibold text-gray-900 mb-2 group-hover/skill:text-blue-600 transition-colors duration-300">
+                      {skill.name}
+                    </h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {skill.description}
+                    </p>
                   </div>
                 ))}
               </div>
+              
+              {/* Decorative Element */}
+              <div className={`absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r ${category.gradient} rounded-full opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
             </div>
           ))}
-        </div>
-        
-        {/* Call to action */}
-        <div className="mt-20 lg:mt-32 text-center animate-slide-up" style={{animationDelay: '0.8s', animationFillMode: 'both'}}>
-          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 lg:p-10 hover:bg-white/90 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 group max-w-3xl">
-            <div className="text-5xl group-hover:animate-bounce">�</div>
-            <div className="text-center sm:text-left">
-              <p className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
-                Aprendizado Contínuo
-              </p>
-              <p className="text-slate-700 text-lg group-hover:text-slate-800 transition-colors duration-300">
-                Comprometido com a evolução constante e adoção de melhores práticas de desenvolvimento para entregar soluções de alta qualidade
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
