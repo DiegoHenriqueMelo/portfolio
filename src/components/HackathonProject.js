@@ -228,7 +228,7 @@ const HackathonProject = () => {
                   {
                     icon: "🏆",
                     title: "HACKATHON 2025",
-                    subtitle: "Competição Nacional",
+                    subtitle: "7º lugar",
                     gradient: "from-yellow-500 to-orange-500",
                   },
                   {

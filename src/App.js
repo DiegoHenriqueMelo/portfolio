@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AplPcdProject from './components/AplPcdProject';
 import HackathonProject from './components/HackathonProject';
+import MetricasPage from './components/MetricasPage';
 
 // Página principal do portfólio
 const HomePage = () => (
@@ -25,13 +26,30 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projeto/apl-pcd-api" element={<AplPcdProject />} />
-          <Route path="/projeto/hackathon-2025" element={<HackathonProject />} />
+          <Route path="/" element={
+            <>
+              <Header />
+              <HomePage />
+              <Footer />
+            </>
+          } />
+          <Route path="/projeto/apl-pcd-api" element={
+            <>
+              <Header />
+              <AplPcdProject />
+              <Footer />
+            </>
+          } />
+          <Route path="/projeto/hackathon-2025" element={
+            <>
+              <Header />
+              <HackathonProject />
+              <Footer />
+            </>
+          } />
+          <Route path="/metricas" element={<MetricasPage />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
