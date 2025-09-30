@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 
-const SimpleAuth = ({ children, password = "metricas2025" }) => {
+const SimpleAuth = ({ children, passwordHash = "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9" }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [inputPassword, setInputPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (inputPassword === password) {
+    // Gerar hash SHA-256 da senha digitada
+    const encoder = new TextEncoder();
+    const data = encoder.encode(inputPassword);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    
+    if (hashHex === passwordHash) {
       setIsAuthenticated(true);
       setError('');
     } else {
