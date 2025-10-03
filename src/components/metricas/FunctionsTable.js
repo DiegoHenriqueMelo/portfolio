@@ -4,7 +4,7 @@ import FunctionForm from './FunctionForm';
 import ConfirmModal from './ConfirmModal';
 
 export default function FunctionsTable() {
-  const { state, dispatch, actions, getFunctionResult, getPFNA } = useFunctionPoints();
+  const { state, dispatch, actions, getFunctionResult, getFPb } = useFunctionPoints();
   const [editingFunction, setEditingFunction] = useState(null);
   const [confirmDelete, setConfirmDelete] = useState({ isOpen: false, functionId: null, functionType: '' });
 
@@ -158,10 +158,10 @@ export default function FunctionsTable() {
             <tfoot>
               <tr style={totalRowStyle}>
                 <td colSpan="4" style={{...headerStyle, ...totalRowStyle, fontWeight: 'bold', color: '#111827'}}>
-                  Total PFNA (Pontos de Função Não Ajustados):
+                  Total FP'b (Pontos de Função Não Ajustados):
                 </td>
                 <td style={{...headerStyle, ...totalRowStyle, fontWeight: 'bold', color: '#2563eb', textAlign: 'center'}}>
-                  {getPFNA()}
+                  {getFPb()}
                 </td>
                 <td style={{...headerStyle, ...totalRowStyle}}></td>
               </tr>

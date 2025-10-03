@@ -16,6 +16,29 @@ export default function ProjectConfigForm() {
     });
   };
 
+  const handleLanguageChange = (index, language) => {
+    const currentLanguages = state.projectConfig.languages || [];
+    const newLanguages = [...currentLanguages];
+    
+    if (language === '') {
+      // Remove a linguagem do índice especificado
+      newLanguages.splice(index, 1);
+    } else {
+      // Atualiza ou adiciona a linguagem no índice especificado
+      newLanguages[index] = language;
+    }
+    
+    // Remove valores vazios e duplicatas
+    const filteredLanguages = newLanguages.filter((lang, idx, arr) => 
+      lang && lang !== '' && arr.indexOf(lang) === idx
+    );
+    
+    dispatch({
+      type: actions.UPDATE_PROJECT_CONFIG,
+      payload: { languages: filteredLanguages }
+    });
+  };
+
   const containerStyle = {
     backgroundColor: 'white',
     borderRadius: '8px',
@@ -102,8 +125,13 @@ export default function ProjectConfigForm() {
       {!showForm ? (
         <div style={summaryStyle}>
           <div style={summaryItemStyle}>
-            <span>Linguagem:</span>
-            <strong>{state.projectConfig.language}</strong>
+            <span>Linguagens:</span>
+            <strong>
+              {(state.projectConfig.languages && state.projectConfig.languages.length > 0) 
+                ? state.projectConfig.languages.join(', ')
+                : state.projectConfig.language
+              }
+            </strong>
           </div>
           <div style={summaryItemStyle}>
             <span>Tipo de Sistema:</span>
@@ -149,21 +177,64 @@ export default function ProjectConfigForm() {
               <label style={labelStyle}>
                 Tipo de Linguagem para Cálculo de LOC
                 <span style={{fontSize: '12px', color: '#6b7280', fontWeight: 'normal'}}>
-                  {' '}(LOC/PF: {PROGRAMMING_LANGUAGES[state.projectConfig.language]})
+                  {' '}(Selecione até 2 linguagens)
                 </span>
               </label>
-              <select
-                name="language"
-                value={state.projectConfig.language}
-                onChange={handleInputChange}
-                style={inputStyle}
-              >
-                {Object.keys(PROGRAMMING_LANGUAGES).map(lang => (
-                  <option key={lang} value={lang}>
-                    {lang} ({PROGRAMMING_LANGUAGES[lang]} LOC/PF)
-                  </option>
-                ))}
-              </select>
+              
+              <div style={{display: 'grid', gap: '12px'}}>
+                {/* Primeira linguagem */}
+                <div>
+                  <label style={{
+                    display: 'block',
+                    fontSize: '13px',
+                    fontWeight: '500',
+                    color: '#4b5563',
+                    marginBottom: '4px'
+                  }}>
+                    Linguagem Principal
+                  </label>
+                  <select
+                    value={(state.projectConfig.languages || [])[0] || ''}
+                    onChange={(e) => handleLanguageChange(0, e.target.value)}
+                    style={inputStyle}
+                  >
+                    <option value="">Selecione uma linguagem...</option>
+                    {Object.keys(PROGRAMMING_LANGUAGES).map(lang => (
+                      <option key={lang} value={lang}>
+                        {lang} ({PROGRAMMING_LANGUAGES[lang]} LOC/PF)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Segunda linguagem */}
+                <div>
+                  <label style={{
+                    display: 'block',
+                    fontSize: '13px',
+                    fontWeight: '500',
+                    color: '#4b5563',
+                    marginBottom: '4px'
+                  }}>
+                    Linguagem Secundária (Opcional)
+                  </label>
+                  <select
+                    value={(state.projectConfig.languages || [])[1] || ''}
+                    onChange={(e) => handleLanguageChange(1, e.target.value)}
+                    style={inputStyle}
+                    disabled={!(state.projectConfig.languages || [])[0]}
+                  >
+                    <option value="">Selecione uma linguagem...</option>
+                    {Object.keys(PROGRAMMING_LANGUAGES)
+                      .filter(lang => lang !== (state.projectConfig.languages || [])[0])
+                      .map(lang => (
+                        <option key={lang} value={lang}>
+                          {lang} ({PROGRAMMING_LANGUAGES[lang]} LOC/PF)
+                        </option>
+                      ))}
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -244,7 +315,11 @@ export default function ProjectConfigForm() {
                 💡 Configuração Atual
               </h4>
               <div style={{fontSize: '12px', color: '#047857', lineHeight: '1.5'}}>
-                <div>• {PROGRAMMING_LANGUAGES[state.projectConfig.language]} LOC por PF</div>
+                <div>• Linguagens: {
+                  (state.projectConfig.languages && state.projectConfig.languages.length > 0)
+                    ? state.projectConfig.languages.map(lang => `${lang} (${PROGRAMMING_LANGUAGES[lang]} LOC/PF)`).join(', ')
+                    : `${state.projectConfig.language} (${PROGRAMMING_LANGUAGES[state.projectConfig.language]} LOC/PF)`
+                }</div>
                 <div>• {SYSTEM_TYPES[state.projectConfig.systemType]} LOC/mês</div>
                 <div>• R$ {state.projectConfig.hourlyRate}/hora</div>
                 <div>• {ISO_WORKING_HOURS.HOURS_PER_MONTH}h/mês (padrão ISO)</div>

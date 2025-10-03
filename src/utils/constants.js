@@ -28,9 +28,9 @@ export const INFLUENCE_FACTORS = [
 export const PROGRAMMING_LANGUAGES = {
   'Cobol': 100,
   'Pascal': 90,
-  'C++': 30,
+  'Linguagens Orientadas a Objeto (C++)': 30,
   'Java / Delphi / Visual Basic': 20,
-  'Geradores de Código (SQL + HTML)': 15
+  'Geradores de Código (SQL + HTML+ Javascript + Python...)': 15
 };
 
 export const SYSTEM_TYPES = {

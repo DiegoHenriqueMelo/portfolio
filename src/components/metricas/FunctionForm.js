@@ -96,8 +96,8 @@ export default function FunctionForm({ onClose, editingFunction = null }) {
     borderRadius: '8px',
     padding: '24px',
     width: '100%',
-    maxWidth: '480px',
-    maxHeight: '90vh',
+    maxWidth: '600px',
+    maxHeight: '95vh',
     overflowY: 'auto'
   };
 
@@ -199,6 +199,1083 @@ export default function FunctionForm({ onClose, editingFunction = null }) {
               ))}
             </select>
             {errors.complexity && <p style={errorStyle}>{errors.complexity}</p>}
+          </div>
+
+          {/* Tabelas de Referência */}
+          <div style={{ 
+            marginBottom: '24px', 
+            padding: '20px',
+            backgroundColor: '#f8fafc',
+            borderRadius: '8px',
+            border: '1px solid #e2e8f0'
+          }}>
+            <h3 style={{
+              margin: '0 0 20px 0',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#1e293b',
+              textAlign: 'center',
+              borderBottom: '2px solid #475569',
+              paddingBottom: '10px'
+            }}>
+              📊 Tabelas de Referência para Análise de Pontos de Função
+            </h3>
+            
+            {/* Tabela ENTRADAS */}
+            <div style={{ 
+              marginBottom: '20px',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              border: '1px solid #d1d5db'
+            }}>
+              <div style={{ 
+                backgroundColor: '#374151', 
+                color: 'white', 
+                padding: '10px 16px', 
+                textAlign: 'center', 
+                fontWeight: '600',
+                fontSize: '13px',
+                letterSpacing: '0.5px'
+              }}>
+                📥 ENTRADAS DE DADOS
+              </div>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse', 
+                backgroundColor: 'white',
+                fontSize: '12px'
+              }}>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} style={{ 
+                      backgroundColor: '#4b5563', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      verticalAlign: 'middle'
+                    }}>
+                      ARQUIVOS<br/>REFERENCIADOS
+                    </th>
+                    <th colSpan={3} style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600'
+                    }}>
+                      QUANTIDADE DE CAMPOS / ATRIBUTOS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      1 a 4
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      5 a 15
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      16 +
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      1
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#ffffff' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      2
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      3 +
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Tabela SAÍDAS */}
+            <div style={{ 
+              marginBottom: '20px',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              border: '1px solid #d1d5db'
+            }}>
+              <div style={{ 
+                backgroundColor: '#475569', 
+                color: 'white', 
+                padding: '10px 16px', 
+                textAlign: 'center', 
+                fontWeight: '600',
+                fontSize: '13px',
+                letterSpacing: '0.5px'
+              }}>
+                📤 SAÍDAS DE DADOS
+              </div>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse', 
+                backgroundColor: 'white',
+                fontSize: '12px'
+              }}>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} style={{ 
+                      backgroundColor: '#4b5563', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      verticalAlign: 'middle'
+                    }}>
+                      ARQUIVOS<br/>REFERENCIADOS
+                    </th>
+                    <th colSpan={3} style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600'
+                    }}>
+                      QUANTIDADE DE CAMPOS / ATRIBUTOS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      1 a 5
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      6 a 19
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      20 +
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      1
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#ffffff' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      2 ou 3
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      4 +
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Tabela CONSULTAS */}
+            <div style={{ 
+              marginBottom: '20px',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              border: '1px solid #d1d5db'
+            }}>
+              <div style={{ 
+                backgroundColor: '#1f2937', 
+                color: 'white', 
+                padding: '10px 16px', 
+                textAlign: 'center', 
+                fontWeight: '600',
+                fontSize: '13px',
+                letterSpacing: '0.5px'
+              }}>
+                🔍 CONSULTAS
+              </div>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse', 
+                backgroundColor: 'white',
+                fontSize: '12px'
+              }}>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} style={{ 
+                      backgroundColor: '#4b5563', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      verticalAlign: 'middle'
+                    }}>
+                      ARQUIVOS<br/>REFERENCIADOS
+                    </th>
+                    <th colSpan={3} style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600'
+                    }}>
+                      QUANTIDADE DE CAMPOS / ATRIBUTOS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      1 a 4
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      5 a 15
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      16 +
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      1
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#ffffff' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      2
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      3 +
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Tabela ARQUIVOS */}
+            <div style={{ 
+              marginBottom: '20px',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              border: '1px solid #d1d5db'
+            }}>
+              <div style={{ 
+                backgroundColor: '#1f2937', 
+                color: 'white', 
+                padding: '10px 16px', 
+                textAlign: 'center', 
+                fontWeight: '600',
+                fontSize: '13px',
+                letterSpacing: '0.5px'
+              }}>
+                🗃️ ARQUIVOS LÓGICOS INTERNOS
+              </div>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse', 
+                backgroundColor: 'white',
+                fontSize: '12px'
+              }}>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} style={{ 
+                      backgroundColor: '#4b5563', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      verticalAlign: 'middle'
+                    }}>
+                      ARQUIVOS<br/>REFERENCIADOS
+                    </th>
+                    <th colSpan={3} style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600'
+                    }}>
+                      QUANTIDADE DE CAMPOS / ATRIBUTOS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      1 a 19
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      20 A 50
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      51 +
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      1
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#ffffff' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      2 a 5
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      6 +
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Tabela INTERFACE */}
+            <div style={{ 
+              marginBottom: '20px',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              border: '1px solid #d1d5db'
+            }}>
+              <div style={{ 
+                backgroundColor: '#374151', 
+                color: 'white', 
+                padding: '10px 16px', 
+                textAlign: 'center', 
+                fontWeight: '600',
+                fontSize: '13px',
+                letterSpacing: '0.5px'
+              }}>
+                🔗 ARQUIVOS INTERFACE EXTERNA
+              </div>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse', 
+                backgroundColor: 'white',
+                fontSize: '12px'
+              }}>
+                <thead>
+                  <tr>
+                    <th rowSpan={2} style={{ 
+                      backgroundColor: '#4b5563', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      verticalAlign: 'middle'
+                    }}>
+                      ARQUIVOS<br/>REFERENCIADOS
+                    </th>
+                    <th colSpan={3} style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '12px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600'
+                    }}>
+                      QUANTIDADE DE CAMPOS / ATRIBUTOS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      1 a 5
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      6 A 10
+                    </th>
+                    <th style={{ 
+                      backgroundColor: '#6b7280', 
+                      color: 'white', 
+                      padding: '8px 6px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontSize: '10px',
+                      fontWeight: '500'
+                    }}>
+                      11 +
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      5
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#ffffff' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      6 a 10
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      SIMPLES
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                  <tr style={{ backgroundColor: '#f9fafb' }}>
+                    <td style={{ 
+                      backgroundColor: '#374151', 
+                      color: 'white', 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '600',
+                      fontSize: '11px'
+                    }}>
+                      11 +
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      MÉDIO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                    <td style={{ 
+                      padding: '10px 8px', 
+                      border: '1px solid #d1d5db', 
+                      textAlign: 'center',
+                      fontWeight: '500',
+                      fontSize: '11px'
+                    }}>
+                      COMPLEXO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </div>
 
           <div style={{...previewStyle, border: '2px solid #10b981'}}>
